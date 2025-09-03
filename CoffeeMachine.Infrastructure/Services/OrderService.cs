@@ -1,4 +1,4 @@
-﻿using CoffeeMachine.Core.Abstractions.Logging;
+﻿using CoffeeMachine.Core.Application.Logging;
 using CoffeeMachine.Core.Application.Models;
 using CoffeeMachine.Core.Application.Services;
 using CoffeeMachine.Core.Common.Results;
@@ -80,5 +80,11 @@ public class OrderService : IOrderService
     public async Task<Result> CompleteOrderAsync(Guid orderId)
     {
         return await UpdateOrderStatusAsync(orderId, "Completed", 100);
+    }
+
+    public Task CreateOrderAsync(OrderDto orderDto)
+    {
+        _orders.Add(orderDto);
+        return Task.CompletedTask;
     }
 }

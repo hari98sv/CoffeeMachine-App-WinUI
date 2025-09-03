@@ -9,4 +9,5 @@ public interface IOrderService
     Task<Result<List<OrderDto>>> GetAllOrdersAsync();
     Task<Result> UpdateOrderStatusAsync(Guid orderId, string status, int progressPercentage = 0, string errorMessage = null);
     Task<Result> CompleteOrderAsync(Guid orderId);
+    Task CreateOrderAsync(OrderDto orderDto);
 }

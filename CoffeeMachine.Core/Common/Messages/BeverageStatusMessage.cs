@@ -37,9 +37,6 @@ public class BeverageStatusMessage
     {
         get;
     }
-    public bool IsComplete => Status.Equals("Completed", StringComparison.OrdinalIgnoreCase);
-    public bool IsError => Status.Equals("Error", StringComparison.OrdinalIgnoreCase);
-    public bool IsCancelled => Status.Equals("Cancelled", StringComparison.OrdinalIgnoreCase);
 
     public BeverageStatusMessage(OrderDto order, string status, int progressPercentage, string currentStep = null)
     {
@@ -69,17 +66,10 @@ public class BeverageStatusMessage
     {
         return status switch
         {
-            "Queued" => "Waiting to start",
-            "Preparation started" => "Initializing machine",
-            "Heating" => "Heating components",
-            "Grinding" => "Grinding coffee beans",
-            "Brewing" when progress < 30 => "Preparing brew",
-            "Brewing" when progress < 70 => "Extracting coffee",
-            "Brewing" => "Finalizing extraction",
-            "Steaming" when progress < 50 => "Heating milk",
-            "Steaming" => "Creating foam",
-            "Mixing" => "Combining ingredients",
-            "Dispensing" => "Dispensing beverage",
+            "Preparing" when progress < 25 => "Initializing machine",
+            "Preparing" when progress < 50 => "Heating components",
+            "Preparing" when progress < 75 => "Brewing beverage",
+            "Preparing" => "Final preparation",
             "Completed" => "Ready for serving",
             "Cancelled" => "Process cancelled",
             "Error" => "Error occurred",

@@ -14,4 +14,10 @@
 	  <Folder Include="Logging\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Update="Data\*.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
 </Project>

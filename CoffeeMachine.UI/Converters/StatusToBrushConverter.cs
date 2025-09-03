@@ -12,16 +12,16 @@ public class StatusToBrushConverter : IValueConverter
         {
             if (status.Contains("Error", StringComparison.OrdinalIgnoreCase) ||
                 status.Contains("Failed", StringComparison.OrdinalIgnoreCase))
-                return Application.Current.Resources["ErrorRedBrush"];
+                return Application.Current.Resources["ErrorRed"];
 
             if (status.Contains("Success", StringComparison.OrdinalIgnoreCase) ||
                 status.Contains("Complete", StringComparison.OrdinalIgnoreCase) ||
                 status.Contains("Ready", StringComparison.OrdinalIgnoreCase))
-                return Application.Current.Resources["SuccessGreenBrush"];
+                return Application.Current.Resources["SuccessGreen"];
 
             if (status.Contains("Preparing", StringComparison.OrdinalIgnoreCase) ||
                 status.Contains("Processing", StringComparison.OrdinalIgnoreCase))
-                return Application.Current.Resources["CoffeeBrownBrush"];
+                return Application.Current.Resources["CoffeeBrown"];
         }
 
         return null;

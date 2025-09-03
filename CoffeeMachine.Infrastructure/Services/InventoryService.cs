@@ -1,4 +1,4 @@
-﻿using CoffeeMachine.Core.Abstractions.Logging;
+﻿using CoffeeMachine.Core.Application.Logging;
 using CoffeeMachine.Core.Application.Models;
 using CoffeeMachine.Core.Application.Services;
 using CoffeeMachine.Core.Common.Results;

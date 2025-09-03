@@ -10,7 +10,7 @@ using CoffeeMachine.Core.Common;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CoffeeMachine.Core.Application.Queries;
-using CoffeeMachine.Core.Abstractions.Logging;
+using CoffeeMachine.Core.Application.Logging;
 
 namespace CoffeeMachine.UI.ViewModels;
 
@@ -122,6 +122,7 @@ public class MainViewModel : ObservableRecipient
         App.GetDispatcher().TryEnqueue(() =>
         {
             StatusMessage = $"{message.BeverageName}: {message.Status} ({message.ProgressPercentage}%)";
+
         });
     }
 
@@ -132,6 +133,23 @@ public class MainViewModel : ObservableRecipient
             StatusMessage = $"Error: {message.Message}";
         });
     }
+
+    //private void UpdateProgressVisuals(int progress, string status)
+    //{
+    //    // Update progress bar, status text, etc.
+    //    ProgressBarValue = progress;
+    //    StatusColor = GetStatusColor(status);
+
+    //    // Optional: Play sound or show notification for major status changes
+    //    if (status == "Completed")
+    //    {
+    //        PlayCompletionSound();
+    //    }
+    //    else if (status == "Error")
+    //    {
+    //        ShowErrorNotification();
+    //    }
+    //}
 
     private async Task LoadAvailableBeveragesAsync()
     {

@@ -9,10 +9,12 @@ using CoffeeMachine.Core.Application.Commands.Handlers;
 using CoffeeMachine.Core.Application.Queries;
 using CoffeeMachine.UI.ViewModels;
 using Microsoft.UI.Dispatching;
-using CoffeeMachine.Core.Abstractions.Logging;
 using CoffeeMachine.Infrastructure.Services.Logging;
 using CoffeeMachine.Infrastructure.Services;
 using CoffeeMachine.Core.Application.Services;
+using CoffeeMachine.Core.Application.Logging;
+using CoffeeMachine.Core.Application.Repository;
+using CoffeeMachine.Infrastructure.Services.State;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -67,9 +69,12 @@ namespace CoffeeMachine.UI
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<IInventoryService, InventoryService>();
 
+            services.AddSingleton<IStateMachineService, CoffeeStateMachineService>();
+
             // Register Services
             services.AddSingleton<ILoggingService, ConsoleLogger>();
             services.AddSingleton<IMessagingService, MessagingService>();
+            services.AddSingleton<IFileService, FileService>();
         }
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)

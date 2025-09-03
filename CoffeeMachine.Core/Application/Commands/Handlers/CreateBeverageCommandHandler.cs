@@ -4,7 +4,7 @@ using CoffeeMachine.Core.Common.Messages;
 using CoffeeMachine.Core.Common.Results;
 using CoffeeMachine.Core.Common;
 using CoffeeMachine.Core.Application.Mediator.Interfaces;
-using CoffeeMachine.Core.Abstractions.Logging;
+using CoffeeMachine.Core.Application.Logging;
 
 namespace CoffeeMachine.Core.Application.Commands.Handlers;
 
@@ -56,7 +56,7 @@ public class CreateBeverageCommandHandler : ICommandHandler<CreateBeverageComman
             }
 
             // Start preparation
-            var preparationResult = await _beverageService.StartBeveragePreparationAsync(orderResult.Data.Id);
+            var preparationResult = await _beverageService.StartBeveragePreparationAsync(orderResult.Data);
             if (!preparationResult.IsSuccess)
             {
                 return Result.Failure<OrderDto>(preparationResult.Error);

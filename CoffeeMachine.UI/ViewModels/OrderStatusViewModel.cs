@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Reactive.Concurrency;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using CoffeeMachine.Core.Abstractions.Logging;
 using CoffeeMachine.Core.Application.Commands;
+using CoffeeMachine.Core.Application.Logging;
 using CoffeeMachine.Core.Application.Mediator.Interfaces;
 using CoffeeMachine.Core.Application.Models;
 using CoffeeMachine.Core.Application.Queries;
 using CoffeeMachine.Core.Common;
 using CoffeeMachine.Core.Common.Messages;
 using CoffeeMachine.Core.Common.Results;
-using CommunityToolkit.Mvvm;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 

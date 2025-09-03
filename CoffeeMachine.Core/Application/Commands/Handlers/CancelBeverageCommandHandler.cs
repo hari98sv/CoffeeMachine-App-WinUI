@@ -2,7 +2,7 @@
 using CoffeeMachine.Core.Common.Messages;
 using CoffeeMachine.Core.Common.Results;
 using CoffeeMachine.Core.Application.Mediator.Interfaces;
-using CoffeeMachine.Core.Abstractions.Logging;
+using CoffeeMachine.Core.Application.Logging;
 
 namespace CoffeeMachine.Core.Application.Commands.Handlers;
 
