@@ -7,10 +7,10 @@ using CoffeeMachine.Core.Application.Models;
 using CoffeeMachine.Core.Common.Messages;
 using CoffeeMachine.Core.Common.Results;
 using CoffeeMachine.Core.Common;
-using CoffeeMachine.Infrastructure.Abstractions;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CoffeeMachine.Core.Application.Queries;
+using CoffeeMachine.Core.Abstractions.Logging;
 
 namespace CoffeeMachine.UI.ViewModels;
 

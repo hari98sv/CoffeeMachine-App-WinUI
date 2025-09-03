@@ -71,9 +71,12 @@ public class BeverageSpecification : IEquatable<BeverageSpecification>
 
     public bool Equals(BeverageSpecification other)
     {
-        if (other is null) return false;
-        if (ReferenceEquals(this, other)) return true;
-        return Type == other.Type;
+        if (other is null)
+        {
+            return false;
+        }
+
+        return ReferenceEquals(this, other) || Type == other.Type;
     }
 
     public override bool Equals(object obj)

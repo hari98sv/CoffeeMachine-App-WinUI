@@ -1,8 +1,8 @@
 ﻿using CoffeeMachine.Core.Application.Services;
 using CoffeeMachine.Core.Common.Messages;
 using CoffeeMachine.Core.Common.Results;
-using CoffeeMachine.Infrastructure.Abstractions;
 using CoffeeMachine.Core.Application.Mediator.Interfaces;
+using CoffeeMachine.Core.Abstractions.Logging;
 
 namespace CoffeeMachine.Core.Application.Commands.Handlers;
 
