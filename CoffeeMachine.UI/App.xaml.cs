@@ -8,10 +8,11 @@ using Microsoft.Extensions.Hosting;
 using CoffeeMachine.Core.Application.Commands.Handlers;
 using CoffeeMachine.Core.Application.Queries;
 using CoffeeMachine.UI.ViewModels;
-using CoffeeMachine.Core.Application.Services;
 using Microsoft.UI.Dispatching;
 using CoffeeMachine.Core.Abstractions.Logging;
 using CoffeeMachine.Infrastructure.Services.Logging;
+using CoffeeMachine.Infrastructure.Services;
+using CoffeeMachine.Core.Application.Services;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.

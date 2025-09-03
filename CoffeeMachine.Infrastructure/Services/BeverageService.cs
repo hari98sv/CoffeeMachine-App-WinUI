@@ -1,11 +1,12 @@
 ﻿using CoffeeMachine.Core.Abstractions.Logging;
 using CoffeeMachine.Core.Application.Models;
+using CoffeeMachine.Core.Application.Services;
 using CoffeeMachine.Core.Common.Results;
 using CoffeeMachine.Core.Domain.Entities;
 using CoffeeMachine.Core.Domain.Enums;
 using CoffeeMachine.Core.Domain.ValueObjects;
 
-namespace CoffeeMachine.Core.Application.Services;
+namespace CoffeeMachine.Infrastructure.Services;
 
 public class BeverageService : IBeverageService
 {
