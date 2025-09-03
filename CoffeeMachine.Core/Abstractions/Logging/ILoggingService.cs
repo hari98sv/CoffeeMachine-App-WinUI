@@ -1,4 +1,4 @@
-﻿namespace CoffeeMachine.Infrastructure.Abstractions;
+﻿namespace CoffeeMachine.Core.Abstractions.Logging;
 
 public interface ILoggingService
 {

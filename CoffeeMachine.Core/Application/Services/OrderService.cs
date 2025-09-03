@@ -1,6 +1,6 @@
-﻿using CoffeeMachine.Core.Application.Models;
+﻿using CoffeeMachine.Core.Abstractions.Logging;
+using CoffeeMachine.Core.Application.Models;
 using CoffeeMachine.Core.Common.Results;
-using CoffeeMachine.Infrastructure.Abstractions;
 
 namespace CoffeeMachine.Core.Application.Services;
 

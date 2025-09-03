@@ -1,9 +1,9 @@
-﻿using CoffeeMachine.Core.Application.Models;
+﻿using CoffeeMachine.Core.Abstractions.Logging;
+using CoffeeMachine.Core.Application.Models;
 using CoffeeMachine.Core.Common.Results;
 using CoffeeMachine.Core.Domain.Entities;
 using CoffeeMachine.Core.Domain.Enums;
 using CoffeeMachine.Core.Domain.ValueObjects;
-using CoffeeMachine.Infrastructure.Abstractions;
 
 namespace CoffeeMachine.Core.Application.Services;
 
