@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CoffeeMachine (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CoffeeMachine (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

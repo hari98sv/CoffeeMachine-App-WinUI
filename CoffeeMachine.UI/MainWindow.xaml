@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="CoffeeMachine.UI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CoffeeMachine.UI"
+    xmlns:viewmodels="using:CoffeeMachine.UI.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="CoffeeMachine">
+
+    <Grid x:Name="Root" Padding="20" RowSpacing="15" ColumnSpacing="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="☕ Coffee Machine" 
+                   FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+        <!-- Beverage Selection -->
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Select Beverage:" VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" 
+                  ItemsSource="{Binding AvailableBeverages}"
+                  DisplayMemberPath="Name"
+                  SelectedItem="{Binding SelectedBeverage, Mode=TwoWay}"/>
+        <!--IsEnabled="{Binding IsProcessing, Converter={StaticResource InverseBooleanConverter}}"/>-->
+
+        <!-- Size Selection -->
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Size:" VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" 
+                  ItemsSource="{Binding AvailableSizes}"
+                  SelectedItem="{Binding SelectedSize, Mode=TwoWay}"/>
+        <!--IsEnabled="{Binding IsProcessing, Converter={StaticResource InverseBooleanConverter}}"/>-->
+
+        <!-- Customer Name -->
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Customer Name:" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="3" Grid.Column="1" 
+                 Text="{Binding CustomerName, Mode=TwoWay}"/>
+                 <!--IsEnabled="{Binding IsProcessing, Converter={StaticResource InverseBooleanConverter}}"/>-->
+
+        <!-- Options -->
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Spacing="20">
+            <CheckBox Content="Add Sugar" IsChecked="{Binding AddSugar, Mode=TwoWay}"/>
+                     <!--IsEnabled="{Binding IsProcessing, Converter={StaticResource InverseBooleanConverter}}"/>-->
+            <CheckBox Content="Add Milk" IsChecked="{Binding AddMilk, Mode=TwoWay}"/>
+                     <!--IsEnabled="{Binding IsProcessing, Converter={StaticResource InverseBooleanConverter}}"/>-->
+        </StackPanel>
+
+        <!-- Status -->
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Status:" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding StatusMessage}" />
+                   <!--Foreground="{Binding StatusMessage, Converter={StaticResource StatusColorConverter}}"/>-->
+
+        <!-- Order Button -->
+        <Button Grid.Row="6" Grid.Column="1" 
+                Content="Order Beverage" 
+                Command="{Binding OrderCommand}"
+                HorizontalAlignment="Stretch" Margin="0,10,0,0"/>
+                <!--IsEnabled="{Binding IsProcessing, Converter={StaticResource InverseBooleanConverter}}"-->
+
+        <!-- Progress Ring -->
+        <!--<ProgressRing Grid.Row="7" Grid.ColumnSpan="2" 
+                     IsActive="{Binding IsProcessing}" 
+                     HorizontalAlignment="Center" VerticalAlignment="Center"
+                     Width="60" Height="60" 
+                      Visibility="{Binding IsProcessing, Converter={StaticResource BooleanToVisibilityConverter}}"/>-->
+
+        <!-- Refresh Button -->
+        <Button Grid.Row="8" Grid.Column="1" 
+                Content="Refresh Menu" 
+                Command="{Binding RefreshCommand}"
+                HorizontalAlignment="Right" Margin="0,20,0,0"/>
+    </Grid>
+</Window>
